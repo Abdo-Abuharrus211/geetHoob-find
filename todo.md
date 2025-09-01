@@ -1,0 +1,5 @@
+- [ ] Debug how to pass new values to reducers to update state
+- [ ] Debug the tanstack query and data fetching
+- [ ] Define the types for UserCard's props
+- [ ] Define the types for Repos items
+- [ ] tie it all together
