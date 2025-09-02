@@ -7,8 +7,8 @@ export const resultSlice = createSlice({
         result: {}
     },
     reducers: {
-        set: (state, newState) => {
-            state.result = newState
+        set: (state, action) => {
+            state.result = action.payload
         },
         remove:
             (state) => {
