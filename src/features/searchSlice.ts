@@ -1,22 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+// Copilot suggested...
+// type SearchState = {
+//     history: string[]; // Change 'string' to whatever type you expect in history
+// };
+
+// const initialState: SearchState = {
+//     history: []
+// };
+
 export const searchSlice = createSlice({
     name: "search",
     initialState: {
-        searches: []
+        history: []
     },
     reducers: {
-        add: (state, search) => {
-            state.searches = state.searches.concat(search) // TODO: debug
+        add: (state, action: { payload: string }) => {
+            state.history.push(action.payload) // TODO: debug
         },
-        remove: (state, search) => {
-            state.searches.filter((s) => {
-                s != search;
-            })
+        remove: (state, action: { payload: string }) => {
+            state.history = state.history.filter((s) => s !== action.payload);
         },
         pop: (state) => {
-            state.searches.pop();
+            state.history.pop();
         }
     }
 })
